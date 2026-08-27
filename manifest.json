@@ -1,7 +1,7 @@
 {
 	"id": "star-favorites",
 	"name": "Star Favorites",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "1.7.2",
 	"description": "Star your favorite notes and folders from the right-click menu and jump to them from a dedicated Favorites pane.",
 	"author": "Bugra Sitemkar",
