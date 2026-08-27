@@ -1,5 +1,4 @@
 import {
-	App,
 	ItemView,
 	Menu,
 	Plugin,
@@ -35,14 +34,16 @@ export default class FavoritesPlugin extends Plugin {
 			(leaf) => new FavoritesView(leaf, this)
 		);
 
-		this.addRibbonIcon("star", "Open star favorites", () => {
-			this.activateFavoritesView();
+		this.addRibbonIcon("star", "Open favorites view", () => {
+			void this.activateFavoritesView();
 		});
 
 		this.addCommand({
 			id: "open-favorites-view",
-			name: "Open star favorites",
-			callback: () => this.activateFavoritesView(),
+			name: "Open favorites view",
+			callback: () => {
+				void this.activateFavoritesView();
+			},
 		});
 
 		this.registerEvent(
@@ -59,13 +60,13 @@ export default class FavoritesPlugin extends Plugin {
 
 		this.registerEvent(
 			this.app.vault.on("rename", (file, oldPath) => {
-				this.handleRename(file, oldPath);
+				void this.handleRename(file, oldPath);
 			})
 		);
 
 		this.registerEvent(
 			this.app.vault.on("delete", (file) => {
-				this.handleDelete(file);
+				void this.handleDelete(file);
 			})
 		);
 
@@ -93,8 +94,8 @@ export default class FavoritesPlugin extends Plugin {
 	}
 
 	private async loadFavorites() {
-		const stored = await this.loadData();
-		this.data = Object.assign({}, DEFAULT_DATA, stored);
+		const stored = (await this.loadData()) as Partial<FavoritesData> | null;
+		this.data = Object.assign({}, DEFAULT_DATA, stored ?? {});
 	}
 
 	private async saveFavorites() {
@@ -291,7 +292,7 @@ export default class FavoritesPlugin extends Plugin {
 				active: true,
 			});
 		}
-		workspace.revealLeaf(leaf);
+		await workspace.revealLeaf(leaf);
 	}
 
 	revealInExplorer(file: TAbstractFile) {
@@ -309,7 +310,7 @@ export default class FavoritesPlugin extends Plugin {
 			).internalPlugins;
 			const fileExplorer = internalPlugins.getPluginById("file-explorer");
 			fileExplorer?.instance.revealInFolder?.(file);
-		} catch (e) {
+		} catch {
 			// File explorer reveal is a best-effort convenience; ignore if unavailable.
 		}
 	}
@@ -401,7 +402,7 @@ class FavoritesView extends ItemView {
 
 	private openFavorite(file: TAbstractFile) {
 		if (file instanceof TFile) {
-			this.app.workspace.getLeaf(false).openFile(file);
+			void this.app.workspace.getLeaf(false).openFile(file);
 		} else if (file instanceof TFolder) {
 			this.plugin.revealInExplorer(file);
 		}
