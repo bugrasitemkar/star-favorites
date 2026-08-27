@@ -1,0 +1,57 @@
+/* Star marker prefixed onto favorited notes and folders in the file explorer */
+.nav-file-title.fav-favorited .nav-file-title-content::before,
+.nav-folder-title.fav-favorited .nav-folder-title-content::before {
+	content: "\2605  ";
+	color: var(--text-accent);
+}
+
+/* Favorites pane */
+.fav-view-container {
+	padding: var(--size-4-2);
+}
+
+.fav-view-title {
+	font-weight: var(--font-bold);
+	font-size: var(--font-ui-medium);
+	margin-bottom: var(--size-4-2);
+	color: var(--text-normal);
+}
+
+.fav-empty {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	line-height: 1.4;
+}
+
+.fav-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.fav-item {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	padding: var(--size-4-1) var(--size-4-2);
+	border-radius: var(--radius-s);
+	cursor: pointer;
+	color: var(--nav-item-color);
+}
+
+.fav-item:hover {
+	background-color: var(--nav-item-background-hover);
+	color: var(--nav-item-color-hover);
+}
+
+.fav-item-icon {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	color: var(--text-muted);
+}
+
+.fav-item-name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
