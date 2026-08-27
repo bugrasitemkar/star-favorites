@@ -10,7 +10,7 @@ import {
 	setIcon,
 } from "obsidian";
 
-const FAVORITES_VIEW_TYPE = "favorites-view";
+const FAVORITES_VIEW_TYPE = "star-favorites-view";
 const FAV_CLASS = "fav-favorited";
 const REFRESH_DEBOUNCE_MS = 60;
 
@@ -35,13 +35,13 @@ export default class FavoritesPlugin extends Plugin {
 			(leaf) => new FavoritesView(leaf, this)
 		);
 
-		this.addRibbonIcon("star", "Open favorites", () => {
+		this.addRibbonIcon("star", "Open star favorites", () => {
 			this.activateFavoritesView();
 		});
 
 		this.addCommand({
 			id: "open-favorites-view",
-			name: "Open favorites",
+			name: "Open star favorites",
 			callback: () => this.activateFavoritesView(),
 		});
 
@@ -328,7 +328,7 @@ class FavoritesView extends ItemView {
 	}
 
 	getDisplayText(): string {
-		return "Favorites";
+		return "Star Favorites";
 	}
 
 	getIcon(): string {
@@ -343,7 +343,7 @@ class FavoritesView extends ItemView {
 		const container = this.contentEl;
 		container.empty();
 		container.addClass("fav-view-container");
-		container.createEl("div", { text: "Favorites", cls: "fav-view-title" });
+		container.createEl("div", { text: "Star Favorites", cls: "fav-view-title" });
 
 		const favorites = this.plugin.data.favorites.slice().sort((a, b) =>
 			a.localeCompare(b)

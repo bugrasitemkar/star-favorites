@@ -1,6 +1,6 @@
-# Favorites (star-favorites)
+# Star Favorites
 
-Star your favorite notes and folders straight from the right-click menu, and jump back to them from a dedicated Favorites pane.
+Star your favorite notes and folders straight from the right-click menu, and jump back to them from a dedicated Star Favorites pane.
 
 Repository: [github.com/bugrasitemkar/star-favorites](https://github.com/bugrasitemkar/star-favorites)
 
@@ -8,7 +8,7 @@ Repository: [github.com/bugrasitemkar/star-favorites](https://github.com/bugrasi
 
 - Right-click any note or folder (in the file explorer, or a note's tab) and choose **Add to favorites**. Once favorited, the same menu shows **Remove from favorites**.
 - Favorited notes and folders get a ★ prefixed to their name in the file explorer.
-- Click the star icon in the left ribbon (or run the **Open favorites** command) to open a Favorites pane in the left sidebar listing every starred note and folder. Click an entry to open the note or reveal the folder; right-click an entry to unfavorite it.
+- Click the star icon in the left ribbon (or run the **Open star favorites** command) to open a Star Favorites pane in the left sidebar listing every starred note and folder. Click an entry to open the note or reveal the folder; right-click an entry to unfavorite it.
 - Favorites follow renames and moves automatically, and are cleaned up when the underlying file or folder is deleted.
 - Multi-select support: select several files/folders in the explorer and add or remove them from favorites in one click.
 
@@ -26,7 +26,7 @@ This watches `main.ts` and rebuilds `main.js` on save. To test inside a vault, e
 - Clone/copy this folder into `<YourVault>/.obsidian/plugins/star-favorites`, or
 - Symlink this folder into `<YourVault>/.obsidian/plugins/star-favorites`.
 
-Then reload Obsidian (or use the "Reload app without saving" command) and enable **Favorites** under Settings → Community plugins.
+Then reload Obsidian (or use the "Reload app without saving" command) and enable **Star Favorites** under Settings → Community plugins.
 
 ## Building for release
 

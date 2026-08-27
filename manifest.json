@@ -1,6 +1,6 @@
 {
 	"id": "star-favorites",
-	"name": "Favorites",
+	"name": "Star Favorites",
 	"version": "1.0.0",
 	"minAppVersion": "1.4.0",
 	"description": "Star your favorite notes and folders from the right-click menu and jump to them from a dedicated Favorites pane.",
