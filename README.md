@@ -14,6 +14,12 @@ Repository: [github.com/bugrasitemkar/star-favorites](https://github.com/bugrasi
 
 The ★ marker is shown in the file explorer only (not in tabs, search, or backlink panes).
 
+## Screenshots
+
+| Starred items in the file explorer | Favorites pane |
+| --- | --- |
+| ![Starred folder and note shown with a star prefix in the file explorer](screenshots/explorer-star.png) | ![Favorites pane listing starred items in the left sidebar](screenshots/favorites-pane.png) |
+
 ## Installing for development
 
 ```bash
