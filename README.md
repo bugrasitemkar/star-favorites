@@ -3,6 +3,7 @@
 Star your favorite notes and folders straight from the right-click menu, and jump back to them from a dedicated Star Favorites pane.
 
 Repository: [github.com/bugrasitemkar/star-favorites](https://github.com/bugrasitemkar/star-favorites)
+[Obsidian Community Plug-in Page](https://community.obsidian.md/plugins/star-favorites)
 
 ## Features
 
